@@ -1,0 +1,86 @@
+インストール
+```bash
+$ sudo npm install -g sparqljs
+```
+
+リクエスト
+```bash
+$ sparqljs query.sparql | jq
+
+$ sparqljs --strict query.sparql | jq
+```
+
+レスポンス
+```bash
+{
+  "queryType": "SELECT",
+  "variables": [
+    {
+      "termType": "Variable",
+      "value": "p"
+    },
+    {
+      "termType": "Variable",
+      "value": "c"
+    }
+  ],
+  "where": [
+    {
+      "type": "bgp",
+      "triples": [
+        {
+          "subject": {
+            "termType": "Variable",
+            "value": "p"
+          },
+          "predicate": {
+            "termType": "NamedNode",
+            "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+          },
+          "object": {
+            "termType": "NamedNode",
+            "value": "http://dbpedia.org/ontology/Artist"
+          }
+        },
+        {
+          "subject": {
+            "termType": "Variable",
+            "value": "p"
+          },
+          "predicate": {
+            "termType": "NamedNode",
+            "value": "http://dbpedia.org/ontology/birthPlace"
+          },
+          "object": {
+            "termType": "Variable",
+            "value": "c"
+          }
+        },
+        {
+          "subject": {
+            "termType": "Variable",
+            "value": "c"
+          },
+          "predicate": {
+            "termType": "NamedNode",
+            "value": "http://xmlns.com/foaf/0.1/name"
+          },
+          "object": {
+            "termType": "Literal",
+            "value": "York",
+            "language": "en",
+            "datatype": {
+              "termType": "NamedNode",
+              "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "type": "query",
+  "prefixes": {
+    "dbpedia-owl": "http://dbpedia.org/ontology/"
+  }
+}
+```

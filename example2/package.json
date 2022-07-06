@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "sparql-http-client": "^2.4.0",
+    "sparqljs": "^3.5.1"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "prettier": "^2.4.1"
+  }
+}
